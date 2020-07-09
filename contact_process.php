@@ -1,6 +1,7 @@
 <?php
-
-    $to = "paurakhinirmansewa101@gmail.com";
+	$message_sent = false;
+    if(filter_var($_POST('email'), FILTER_VALIDATE_EMAIL)){
+		$to = "paurakhinirmansewa101@gmail.com";
     $from = $_REQUEST['email'];
     $name = $_REQUEST['name'];
     $subject = $_REQUEST['subject'];
@@ -32,6 +33,8 @@
 	$body .= "</tbody></table>";
 	$body .= "</body></html>";
 
-    $send = mail($to, $subject, $body, $headers);
+	mail($to, $subject, $body, $headers);
+	$message_sent=true;
+	}
 
 ?>
