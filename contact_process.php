@@ -36,5 +36,4 @@
 	mail($to, $subject, $body, $headers);
 	$message_sent=true;
 	}
-
 ?>
